@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp1/ekranlar/loading_screen.dart';void main() {
+import 'package:myapp1/ekranlar/loading_screen.dart';
+import 'package:myapp1/ekranlar/main_screen.dart';void main() {
 runApp(MyApp());
 }
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   title: 'Hava Durumu',
   debugShowCheckedModeBanner:  false,
   theme: ThemeData.dark(),
-  home: LoadingScreen(),
+  home: MainScreen(),
    );
   }  
 }
