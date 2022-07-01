@@ -10,7 +10,42 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/bulutlu.jpg'),
+          fit: BoxFit.cover,
+        ),
+         ),
+        child: Column(
+         crossAxisAlignment:CrossAxisAlignment.stretch , 
+         children:[ 
+          SizedBox(height:40,),
+          Container(
+            child : Icon(
+              FontAwesomeIcons.cloud,
+              size: 75,
+              color:Colors.white,
+
+            )
+          ),
+           SizedBox( height: 20, width: 10,),
+           Center(
+            child: Text('12°', 
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 80.0,
+              letterSpacing: -5
+             ),
+            ),
+          )
+         ],
+         )
+        )
+      );
+    
   }
 }
   
