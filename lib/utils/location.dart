@@ -1,5 +1,4 @@
-import 'dart:html';
-
+import 'package:http/http.dart';
 import 'package:location/location.dart';
 
 class LocationHelper{
@@ -11,7 +10,7 @@ Location location = Location();
 
 bool _serviceEnabled;
 PermissionStatus _permissionGranted;
-LocationData locationData;
+LocationData _locationData;
 
 // SERVIS AYAKTA MU
 _serviceEnabled = await location.serviceEnabled();
@@ -19,16 +18,20 @@ if(!_serviceEnabled){
 _serviceEnabled = await location.requestService();
  if(!_serviceEnabled){
 return;
-
-
-
+  }
  }
-
-
-}
-
-
-
+// konum izni kontrolü
+_permissionGranted = await location.hasPermission();
+if(_permissionGranted == PermissionStatus.denied){
+  _permissionGranted = await location.requestPermission();
+  if(_permissionGranted!=PermissionStatus.granted){
+    return;
+  }
+ }
+ //izinler tamamsa
+ _locationData = await location.getLocation();
+latitude = _locationData.latitude;
+longitude = _locationData.longitude;
 
  }
 }
