@@ -11,6 +11,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+           begin: Alignment.topLeft,
+           end: Alignment.bottomRight,
+           colors:[Color.fromARGB(255, 128, 27, 20), Colors.black] 
+          ),
+        ),
+
        child: Center(
         child: SpinKitSpinningLines(
           color: Colors.white ,
