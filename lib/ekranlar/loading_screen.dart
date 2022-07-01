@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:myapp1/utils/location.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -7,6 +8,8 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
+ LocationHelper? locationData;
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
